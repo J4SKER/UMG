@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<h1>Bienvenido a CLV</h1>
+<h2>Aqui va a chingar a su madre compadre</h2>
+
+    <!--Si quieres colocar una cantidad numerica se coloca en el input type y en el id se coloca el que usaras en la funcion para que no de negativo de 0-->>
+    <label for="QaD">A cuanto está la cantidad de quetzales a dólares</label>
+    <input type="number" id="QaD" placeholder="Escribe la cantidad" oninput="validarQaD()">
+
+    <label for="DaQ">A cuanto está la cantidad de dólares a quetzales</label>
+    <input type="number" id="DaQ" placeholder="Escribe la cantidad" oninput="validarDaQ()">
+
+    <br><br><br>
+
+    <p>Coloque 1 si quiere convertir de Quetzales a Dolares</p>
+    <p>Coloque 2 si quiere convertir de Dolares a Quetzales</p>
+
+    <br><br><br>
+
+    <label for="Moneda">Inserte la cantidad que quiere convertir al tipo de cambio ajustado</label>
+    <input type="number" id="Moneda" placeholder="Escribe la cantidad">
+    
+    <br><br><br>
+
+    <label for="Proceso">Inserte la cantidad solicitada</label>
+    <input type="number" id="Proceso" placeholder="Escribe la cantidad" oninput="ValidarProceso()">
+    <h1 ID="resultado"></h1> 
+</head>
+
+<script type="text/javascript">
+function validarQaD() {
+            var QaD = document.getElementById("QaD");
+            var valor = parseInt(QaD.value);
+            
+            if (valor < 0) {
+                QaD.value = 0;
+            }
+
+
+    }
+function validarDaQ() {
+            var DaQ = document.getElementById("DaQ");
+            var valor = parseInt(DaQ.value);
+            
+            if (valor < 0) {
+                DaQ.value = 0;
+            }
+    }
+function ValidarProceso(){
+        var Proceso = document.getElementById("Proceso");
+        var valor = parseInt(Proceso.value);
+
+        if (valor < 1 || valor > 2) {
+            Proceso.value = 1;
+        }
+    
+        var Moneda = document.getElementById("Moneda").value;
+        var resultado = document.getElementById("resultado");
+        if (valor == 1) {
+    var multiQaD = QaD.value * Moneda;
+    resultado.innerHTML = "El resultado es " + multiQaD;
+        } else if (valor = 2) {
+    var MultiDaQ = (DaQ.value * Moneda);
+    resultado.innerHTML = "El resultado es " + MultiDaQ; 
+}
+}
+</script>
+
+<body>
+</body>
+
+</html>
